@@ -1,7 +1,7 @@
-str = "Hello World"
+string = "Hello World"
 
 index = 0
-for i in str:
+for i in string:
     print(index, i, end=", ")
     index += 1
 
@@ -9,10 +9,10 @@ for i in str:
 
 print("\nBetter Way to do this")
 
-for i in range(len(str)):
-    print(i, str[i], end=", ")
+for i in range(len(string)):
+    print(i, string[i], end=", ")
 
 print("\nAnd much better way to to this is:")
 
-for i, c in enumerate(str):
+for i, c in enumerate(string):
     print(i, c, end=", ")
