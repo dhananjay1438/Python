@@ -7,4 +7,3 @@ if isTrue:
     print("Substring is present in the string!")
 else:
     print("Substring is not present in the string!")
-    
