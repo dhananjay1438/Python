@@ -40,7 +40,7 @@ def show_menu():
         show_menu()
 
 
-def check_if_won():
+def check_if_draw():
     is_draw = True
 
     for letter in my_list:
@@ -81,6 +81,39 @@ def play_tic_tac_toe():
     while True:
         try_for_location(player1_symbol)
         try_for_location(player2_symbol)
+
+
+def check_if_player_won(symbol, start, end, step=1):
+    player_winning = False
+    for i in my_list[start:end:step]:
+        if i == symbol:
+            player_winning = True
+        else:
+            player_winning = False
+            break
+    if symbol == player1_symbol:
+        if player_winning:
+            print("Player 1 won")
+            exit()
+    elif symbol == player2_symbol:
+        if player_winning:
+            print("Player 2 won")
+            exit()
+
+
+def check_if_won():
+    check_if_draw()
+    check_if_player_won(player1_symbol, 1, 4)
+    check_if_player_won(player1_symbol, 4, 7)
+    check_if_player_won(player1_symbol, 7, 10)
+    check_if_player_won(player1_symbol, 3, 8, 2)
+    check_if_player_won(player1_symbol, 1, 10, 4)
+
+    check_if_player_won(player2_symbol, 1, 4)
+    check_if_player_won(player2_symbol, 4, 7)
+    check_if_player_won(player2_symbol, 7, 10)
+    check_if_player_won(player2_symbol, 3, 8, 2)
+    check_if_player_won(player2_symbol, 1, 10, 4)
 
 
 show_menu()
